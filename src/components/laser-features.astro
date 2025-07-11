@@ -1,0 +1,68 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Naturlig heling... Raskere!",
+    description:
+      "Laserterapi stimulerer kroppens egne helingsprosesser. Det terapeutiske lyset aktiverer cellene slik at de jobber mer effektivt, og bidrar til raskere restitusjon etter skader eller betennelser.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Smertelindring uten bivirkninger",
+    description:
+      "Laserlys påvirker nervebaner og reduserer betennelse, noe som gir effektiv smertelindring – helt uten bruk av medisiner eller uønskede bivirkninger.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Reduserer hevelse og inflammasjon",
+    description:
+      "Laserbehandling forbedrer mikrosirkulasjonen og aktiverer lymfesystemet, noe som reduserer hevelser, ødem og betennelsestilstander i både muskler og ledd.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Styrker cellenes energi",
+    description:
+      "Laserlyset øker produksjonen av ATP - cellens «drivstoff» - som gir mer energi til reparasjonsprosesser i skadet vev. Resultatet er sterkere og sunnere celler.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Effektiv ved både akutte og kroniske plager",
+    description:
+      "Enten du har fått en akutt idrettsskade eller sliter med langvarige muskel- og skjelettplager, kan laserterapi gi lindring og forbedret funksjon - ofte etter bare få behandlinger.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Presis, skånsom og målrettet behandling",
+    description:
+      "Laserterapi er helt smertefri og kan rettes nøyaktig mot det området som trenger behandling. Den passer for alle aldersgrupper og brukes også til sårbehandling og øre-nese-hals-problemer.",
+    icon: "bx:bxs-bot",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Derfor velger stadig flere laserbehandling
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Laserterapi gir rask, skånsom og dokumentert effektiv lindring ved smerter, betennelser og skader - helt uten medisiner.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

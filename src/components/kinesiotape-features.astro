@@ -1,0 +1,68 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Lindrer smerter raskt",
+    description:
+      "Kinesiotape reduserer trykket på smertereseptorene i huden, noe som gir rask og merkbar smertelindring – helt uten medisiner.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Støtter muskler og ledd",
+    description:
+      "Tapen hjelper muskler og ledd å bevege seg riktig, gir støtte der det trengs, og forebygger feilbelastning uten å begrense bevegeligheten.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Aktiverer kroppens egen heling",
+    description:
+      "Ved å løfte huden lett, forbedrer kinesiotape blodsirkulasjon og lymfedrenasje, noe som støtter kroppens naturlige evne til å reparere seg selv.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Komfortabel og hudvennlig",
+    description:
+      "Tapen er tynn, elastisk, pustende og vannfast – og føles behagelig på huden. Den sitter godt i flere dager og passer også for sensitiv hud.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Fungerer hele døgnet",
+    description:
+      "I motsetning til kort behandling i klinikk, virker kinesiotape kontinuerlig – hele døgnet – mens du går, jobber eller hviler.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Trygg for alle aldersgrupper",
+    description:
+      "Kinesiotape kan brukes av barn, voksne og eldre – både ved akutte skader og langvarige smerter, og også i kombinasjon med trening eller fysioterapi.",
+    icon: "bx:bxs-bot",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Hvorfor kinesiotape gir effektiv lindring
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Kinesiotape gir kroppen støtte og smertelindring uten å hindre bevegelse. Tapen jobber sammen med deg – hele døgnet – for å hjelpe kroppen med å heles naturlig.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

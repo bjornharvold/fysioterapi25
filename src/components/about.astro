@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import heroImage from "@/assets/christine-harvold.jpg";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<div class="flex flex-col gap-3 mx-auto w-full mt-16">
+  <h2 class="font-bold text-3xl text-gray-800 text-center mb-6">Om Christine Harvold</h2>
+  <div class="grid lg:grid-cols-2 place-items-center pb-8 md:pb-24">
+    <div class="w-sm max-w-4xl text-center mb-4">
+      <Picture src={heroImage} alt="Christine Harvold" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" class="rounded-full object-contain"/>
+    </div>
+
+    <div>
+      <p class="text-lg leading-relaxed text-slate-500 mb-3">
+        Christine Harvold har over 35 års erfaring som fysioterapeut, med praksis i Oslo, München og på Lørenskog. Hun har vært med å starte Rasta Fysioterapi og GruppeFysio, og har spesialisert seg på behandling av bekkenplager og muskel- og skjelettlidelser – alltid med en helhetlig tilnærming.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500 mb-3">
+        Gjennom karrieren har hun utviklet bred kompetanse innen blant annet revmatologi, ortopedi, idrettsfysioterapi og kvinnehelse. Hun har videreutdannet seg i pedagogisk kinesiologi, elektroterapi og kinesio-taping, og deltar jevnlig på kurs både i Norge og internasjonalt.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500 mb-3">Christine har brukt elektromedisinsk utstyr i hele sin karriere, og de siste 20 årene har hun jobbet utelukkende med laserbehandling – med svært gode resultater for både akutte og langvarige plager.</p>
+    </div>
+  </div>
+</div>
